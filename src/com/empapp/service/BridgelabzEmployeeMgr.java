@@ -14,7 +14,18 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
         else
          return true;
 
-  } 
+  }
+  
+  @Override  
+  public boolean isEmployeeParttime()
+  {
+        if(Math.round(Math.random()) == 0)
+         return false ;
+        else
+         return true;
+
+  }  
+ 
   @Override
   public int calculateDailyWage(Employee e)
   {
