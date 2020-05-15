@@ -45,7 +45,24 @@ public class AbcEmployeeMgr implements IEmployeeManager
   }
   
 
+  @Override
+  public int calculateMonthlyWage(Employee em)
+  {
 
+        if(em.getIsPresent() == true)
+        {
+            if(em.getDoneParttime() == true)
+            {
+                    return ((hourlyWage*workingHours + hourlyWage*workingHours)*hourlyWage);
+            }
+            else
+            {
+                    return (hourlyWage*workingHours*hourlyWage);
+            }
+        }
+	return 0;
+
+  }
        
 }
 
