@@ -14,7 +14,24 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
         else
          return true;
 
-  }  
+  } 
+  @Override
+  public int calculateDailyWage(Employee e)
+  {
+	if(e.getIsPresent() == true)
+   	{
+	    if(e.getDoneParttime() == true)
+	    {
+		return (hourlyWage * workingHours + hourlyWage * workingHours );
+	    }
+	    else
+	    {
+		return (hourlyWage * workingHours );
+	    }
+	}
+	return 0;
+  }
+ 
 
   
 }
