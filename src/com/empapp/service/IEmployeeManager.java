@@ -7,4 +7,5 @@ public interface IEmployeeManager
   public boolean isEmployeeParttime(); 
   public int calculateDailyWage(Employee e);
   public int calculateMonthlyWage(Employee e);
+  public int calculateWageTillDaysOrHourReached(Employee e);
 }

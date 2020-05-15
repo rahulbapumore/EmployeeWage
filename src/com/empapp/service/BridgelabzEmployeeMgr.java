@@ -64,5 +64,19 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
   }
  
 
-  
+  @Override 
+  public int calculateWageTillDaysorHourReached(Employee e) 
+  {
+	int tempWorkingHour = 0;
+	int tempWorkingDays = 0
+	int totalWage = 0;
+	while((tempWorkingHour != 100) || (tempWorkingDays != 20))
+	{
+		totalWage +=  calculateDailyWage(e);
+		tempWorkingHour += workingHours;
+		tempWorkingDays += hourlyWage;
+	}
+	return totalWage;
+  } 
 }
+ 
