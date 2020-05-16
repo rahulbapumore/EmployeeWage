@@ -36,7 +36,7 @@ class EmployeeDwTest
 	   case 1:
 		System.out.println("Dailywage for Employee from bridgelabz company with id = "+ brlzEmp.getId() + " is "+blem.calculateDailyWage(brlzEmp));
         	System.out.println("Monthly wage for Employee from bridgelabz company with id = "+ brlzEmp.getId() + " is "+blem.calculateMonthlyWage(brlzEmp));
-		System.out.println("Calculated wage till days or hours reached for Employee from Bridgelabz company with id = "+brlzEmp.getId() + " is "+blem.calculateWageTillDaysOrHourReached());
+		System.out.println("Calculated wage till days or hours reached for Employee from Bridgelabz company with id = "+brlzEmp.getId() + " is "+blem.calculateWageTillDaysOrHourReached(brlzEmp));
                 break;
 	   case 2:
         	System.out.println("Dailywage for Employee from ABC company with id = "+ abcEmp.getId() + " is "+abcem.calculateDailyWage(abcEmp));

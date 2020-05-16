@@ -46,19 +46,23 @@ public class AbcEmployeeMgr implements IEmployeeManager
   
 
   @Override 
-  public int calculateWageTillDaysorHourReached(Employee e) 
+    public int calculateWageTillDaysOrHourReached(Employee e) 
   {
         int tempWorkingHour = 0;
-        int tempWorkingDays = 0
+        int tempWorkingDays = 0;
         int totalWage = 0;
-        while((tempWorkingHour != 100) || (tempWorkingDays != 20))
+        while((tempWorkingHour < 100) || (tempWorkingDays < 20))
         {
+
                 totalWage +=  calculateDailyWage(e);
                 tempWorkingHour += workingHours;
                 tempWorkingDays += hourlyWage;
+                e.setIsPresent(isEmployeePresent());
+                e.setDoneParttime(isEmployeeParttime());
         }
         return totalWage;
   } 
+ 
   @Override
   public int calculateMonthlyWage(Employee em)
   {
