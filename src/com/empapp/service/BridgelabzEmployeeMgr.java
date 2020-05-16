@@ -14,11 +14,11 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
         {
             if(e.getDoneParttime() == true)
             {
-	            return ((hourlyWage*workingHours + hourlyWage * workingHours)*hourlyWage);
+	            return ((hourlyWage*workingHours + hourlyWage * workingHours)*20);
             }
             else
             {
-                    return (hourlyWage * workingHours * hourlyWage);
+                    return (hourlyWage * workingHours * 20);
             }
         }
 	return 0;
@@ -65,16 +65,20 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
  
 
   @Override 
-  public int calculateWageTillDaysorHourReached(Employee e) 
+  public int calculateWageTillDaysOrHourReached(Employee e) 
   {
 	int tempWorkingHour = 0;
-	int tempWorkingDays = 0
+	int tempWorkingDays = 0;
 	int totalWage = 0;
-	while((tempWorkingHour != 100) || (tempWorkingDays != 20))
+	while((tempWorkingHour < 100) || (tempWorkingDays < 20))
 	{
+				
 		totalWage +=  calculateDailyWage(e);
 		tempWorkingHour += workingHours;
 		tempWorkingDays += hourlyWage;
+		e.setIsPresent(this.isEmployeePresent());
+		e.setDoneParttime(this.isEmployeeParttime());
+//		System.out.println(totalWage);
 	}
 	return totalWage;
   } 
