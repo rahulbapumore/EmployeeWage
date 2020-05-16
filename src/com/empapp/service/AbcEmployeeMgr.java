@@ -56,9 +56,12 @@ public class AbcEmployeeMgr implements IEmployeeManager
 
                 totalWage +=  calculateDailyWage(e);
                 tempWorkingHour += workingHours;
-                tempWorkingDays += hourlyWage;
+                tempWorkingDays++;
                 e.setIsPresent(isEmployeePresent());
                 e.setDoneParttime(isEmployeeParttime());
+                if(e.getIsPresent())
+                        System.out.println("Employee is Present ");
+
         }
         return totalWage;
   } 
