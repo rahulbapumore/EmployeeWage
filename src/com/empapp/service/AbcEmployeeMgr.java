@@ -5,7 +5,7 @@ public class AbcEmployeeMgr implements IEmployeeManager
 {
    public static final int workingHours = 8;
    public static final int hourlyWage = 30;
-
+//   public String companyName;
 
   @Override
   public boolean isEmployeePresent()

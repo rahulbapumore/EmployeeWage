@@ -6,7 +6,7 @@ public class BridgelabzEmployeeMgr implements IEmployeeManager
    public static final int workingHours = 11;
    public static final int hourlyWage = 20;
    public static final int partTimeWorkingHours = 4;
-
+//   public String companyName ;
   @Override
   public int calculateMonthlyWage(Employee e)
   {

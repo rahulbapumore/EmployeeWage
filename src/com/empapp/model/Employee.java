@@ -5,9 +5,18 @@ public class Employee
   private int id;
   private boolean isPresent;
   private boolean doneParttime;
- // private  int dailyWage;
+  private  String companyName;
 //  private int monthlyWage;
 
+  public String getCompanyName()
+  {
+	return this.companyName;
+  }
+
+  public void setCompanyName(String name)
+  {
+	companyName = name;
+  }
   public int getId()
   {
 	return this.id;

@@ -6,7 +6,10 @@ import com.empapp.controller.BridgelabzEmployeeMgr;
 import com.empapp.controller.AbcEmployeeMgr;
 import com.empapp.controller.IEmployeeManager;
 import java.util.*;
-
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
 
 class EmployeeDwTest
 {
@@ -30,6 +33,7 @@ class EmployeeDwTest
 	System.out.println("2. ABC");
 	int sw = sc.nextInt();
 	
+	
 	switch(sw)
 	{
 	
@@ -47,5 +51,49 @@ class EmployeeDwTest
 		System.out.println("Enter 1 for bridgelabz 2 for ABC");
 
 	}
+
+	System.out.println("-----------------Craating many Employee objects in arraylist and for each object in arraylist adding object and +"+
+	"calculating wage and Adding to hasmap");
+	List<Employee> empList = new ArrayList<>();
+	for(int i =0;i<20;i++)
+	{
+		Employee e = new Employee();
+		e.setId(i*100);
+	        e.setIsPresent(blem.isEmployeePresent());
+        	e.setDoneParttime(blem.isEmployeeParttime());
+		empList.add(e);
+
+	}
+
+        HashMap<Employee, Integer> hmap = new HashMap<>();
+
+	for(int i=0;i < 20; i++)
+	{
+		if((i%2)==0)
+		{
+			System.out.println("Employee is from Bridgelabz with id "+ empList.get(i).getId());
+			int temp = blem.calculateWageTillDaysOrHourReached(empList.get(i));
+			empList.get(i).setCompanyName("Bridgelabz");			
+			hmap.put(empList.get(i),temp);
+		}
+		else
+		{
+                        System.out.println("Employee is from ABC Company with id "+ empList.get(i).getId());
+
+			int temp = abcem.calculateWageTillDaysOrHourReached(empList.get(i));
+			empList.get(i).setCompanyName("ABC");
+			hmap.put(empList.get(i),temp);
+		}
+	}
+
+	Set set = hmap.entrySet();
+      	Iterator iterator = set.iterator();
+      	while(iterator.hasNext()) 
+	{
+        	 Map.Entry mentry = (Map.Entry)iterator.next();
+         	Employee temp =(Employee) mentry.getKey();
+		System.out.println("Employee with id "+temp.getId() +"  working in company "+ temp.getCompanyName() );
+         	System.out.println("Total Salary = "+mentry.getValue());
+      	}
   }
 }
